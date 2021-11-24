@@ -4,18 +4,14 @@ on:
   # push:
   #   branches:
   #     - main
-  watch:
-    types: started
   schedule:
-    - cron: "30 21 * * *" # 该时间为UTC时间，比北京时间晚8个小时，每天早上5点半自动执行
+    - cron: "0 0 17 * * ?" # 该时间为UTC时间，比北京时间晚8个小时，每天早上5点半自动执行
 
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
-
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
