@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 const sendMail = require('./sendMail');
-
+console.log(666);
 const [cookie, user, pass, to] = process.argv.slice(2);
 process.env.user = user;
 process.env.pass = pass;
